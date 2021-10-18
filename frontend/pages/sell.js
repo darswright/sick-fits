@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import CreateProduct from '../components/CreateProduct';
+import PleaseSignIn from '../components/PleaseSignIn';
 
-export default function Sell() {
+export default function SellPage() {
   return (
     <div>
-      <h2>Sell</h2>
+      <PleaseSignIn>
+        <CreateProduct />
+      </PleaseSignIn>
     </div>
-  )
+  );
 }
