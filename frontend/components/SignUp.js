@@ -5,7 +5,7 @@ import DisplayError from './ErrorMessage';
 import Form from './styles/Form';
 import { CURRENT_USER_QUERY } from './User';
 
-const SIGN_UP_MUTATION = gql`
+export const SIGN_UP_MUTATION = gql`
   mutation SIGN_UP_MUTATION(
     $email: String!
     $name: String!
@@ -28,7 +28,7 @@ export default function SignUp() {
 
   const [signup, { data, loading, error }] = useMutation(SIGN_UP_MUTATION, {
     variables: inputs,
-    refetchQueries: [{ query: CURRENT_USER_QUERY }],
+    // refetchQueries: [{ query: CURRENT_USER_QUERY }],
   });
 
   async function handleSubmit(e) {
@@ -57,7 +57,7 @@ export default function SignUp() {
           <input
             type="name"
             name="name"
-            placeholder="Your Email Address"
+            placeholder="Your Name"
             autoComplete="name"
             value={inputs.name}
             onChange={handleChange}
@@ -88,7 +88,7 @@ export default function SignUp() {
           />
         </label>
 
-        <button type="submit">Sign In</button>
+        <button type="submit">Sign Up</button>
       </fieldset>
     </Form>
   );
